@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(12,3,51,0.3),rgba(12,3,51,0.3));
+    position: relative;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .logo{
+    width: 80px;
+}
+nav u1 li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 40px;
+}
+nav u1 li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px; 
+    padding: 12px 25px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+/* Mail button */
+.mail-btn {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 25px;
+    font-size: 20px;
+    color: #fff;
+    border: 2px solid #0ff;       /* neon border */
+    border-radius: 10px;
+    overflow: hidden;
+    transition: color 0.3s, box-shadow 0.3s;
+}
+
+/* Neon glowing fill — bottom to top */
+.mail-btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    background: linear-gradient(0deg, #00f6ff, #2ecc71);
+    box-shadow: 0 0 15px #00f6ff, 0 0 30px #2ecc71; /* neon glow */
+    z-index: 0;
+    transition: height 0.5s ease-in-out;
+}
+
+/* Pulsing mail icon */
+.mail-btn::after {
+    content: "📧";
+    color: #fff;
+    font-size: 30px;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 0.4s, transform 0.5s;
+}
+
+/* Hover effect */
+.mail-btn:hover::before {
+    height: 100%;                  /* fill from bottom to top */
+}
+
+.mail-btn:hover {
+    color: transparent;             /* hide text */
+    box-shadow: 0 0 20px #0ff, 0 0 40px #2ecc71; /* extra glow on hover */
+}
+
+.mail-btn:hover::after {
+    opacity: 1;                      /* show icon */
+    animation: pulse 1s infinite alternate;
+}
+
+/* Pulse animation for icon */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.content{
+    text-align: center;
+}
+.content h1{
+    font-size: 160px;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+
+/* button */
+.btn {
+    padding: 15px 40px;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+    transform: scale(1.7);
+    margin-top: 20px;
+}
+.btn::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+/* glow */
+.btn::before{
+    content: "";
+    background: linear-gradient(
+        45deg,
+        #FF0000, #FF7300, #FFFB00, #48FF00,
+        #00FFD5, #002BFF, #FF00C8, #FF0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+}
+
+@keyframes glowing {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+}
+
+/* hover */
+.btn:hover::before {
+    opacity: 1;
+}
+
+.btn:active:after {
+    background: transparent;
+}
+
+.btn:active {
+    color: #000;
+    font-weight: bold;
+}
+
+
+.content h1:hover{
+    -webkit-text-stroke: 2px #fff;
+    color: transparent;
+}
+
+
+.back-video{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/9){
+    .back-video{
+        width: 100%;
+        height: auto;
+    }
+}
+@media (max-aspect-ratio: 16/9){
+    .back-video{
+        width: auto;
+        height: 100%;
+    }
+}
