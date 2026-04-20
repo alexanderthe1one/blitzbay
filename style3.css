@@ -1,0 +1,92 @@
+#bg-video{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+
+
+.search-container{
+  background-color: black;
+  width:350px;
+  padding:20px;
+  margin-left: 900px;
+}
+
+#searchBar{
+  width:80%;
+  padding:10px;
+  border:1px solid #ccc;
+  background-color: white;
+  margin-left: 25px;
+  height: 30px;
+}
+
+
+.search-btn{
+  padding:10px 15px;
+  border:none;
+  background:#4CAF50;
+  color:white;
+  cursor:pointer;
+  width: 86%;
+  margin-top: 10px;
+  margin-left: 25px;
+}
+
+.search-btn:hover{
+  background:#45a049;
+}
+
+
+.games{
+  margin-top:20px;
+}
+
+.game{
+  padding:10px;
+  margin:5px;
+}
+
+.letter {
+  color: lightblue;
+  margin-right: 5px;  /* spacing between letters */
+  font-weight: bold;
+  margin-bottom: 70px;
+  display: block;
+  margin-top: 30px;
+  font-size: 30px;
+  text-decoration: underline;
+}
+
+.game-item a {
+  text-decoration: none; /* removes underline */
+  color: gold;          /* optional: keep text white */
+  display: block;
+}
+
+.game-item a:hover {
+  color: gold;           /* optional: change color on hover */
+}
+
+.games-container {
+  background-color: black;   /* black background */
+  padding: 80px;
+  width: 615px;
+  margin-left: 90px;
+}
+
+
+.game-item {
+  color: white;
+  padding: 3px;
+  display: block;            /* keeps them vertical */
+}
+
+.game-item:hover {
+  background-color: black; /* same as container */
+}
+
